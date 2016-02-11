@@ -1,0 +1,22 @@
+<h1 style="text-align: center">Content Item Selection</h1>
+<h4>ContentItemResponse</h4>
+
+<% if @message.accept_unsigned == 'true' %>
+
+<%= react_component('ContentItemBuilder',
+                    data:@message.data,
+                    returnUrl:@message.content_item_return_url,
+                    ltiVersion:@message.lti_version,
+                    ltiLaunchUrl:blti_launch_url,
+                    videoUrl: youtube_url(youtube_url: 'https://www.youtube.com/embed/6foUER9722E'),
+                    textFileUrl: asset_url('test_file.txt'),
+                    ccFileUrl: asset_url('test-course-export.imscc'),
+                    documentTargets:@message.accept_presentation_document_targets.split(','),
+                    mediaTypes:@message.accept_media_types.split(',')
+    ) %>
+    <% else %>
+    <h2>This tool doesn't support signed content item messages! </h2>
+    <p>The message parameter 'accept_unsigned' must be sent with a value of 'true'</p>
+<% end %>
+<h4>LTI Message</h4>
+<%= render "message_info" %>

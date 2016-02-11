@@ -1,0 +1,81 @@
+<div class="container">
+  <h3>Select the capabilities you want to use:</h3>
+    <button onclick="$('input:checkbox').prop('checked', true)">Check All</button>
+    <button onclick="$('input:checkbox').prop('checked', false)">Uncheck All</button>
+  <form method="post" action="<%= save_capabilities_path %>">
+    <input type="hidden" name="reg_id" value="<%= @registration.id %>"/>
+
+    <p><strong>Where would you like this app to appear?</strong></p>
+    <% @capabilities[:placements].each do |cap| %>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value="true" name="placements[Canvas.placements.<%= cap %>][enabled]">
+          <%= display_cap(cap) %>
+        </label>
+      </div>
+    <% end %>
+
+    <p><strong>Select which Services you would like to enable</strong></p>
+    <table class="table table-condensed" style="background-color: white;">
+      <thead>
+      <tr>
+        <th class="text-center">Enable?</th>
+        <th>Service Name</th>
+        <th>Service Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @services_offered.each do |service| %>
+        <tr>
+          <td class="text-center">
+            <label style="display: block;">
+              <input type="checkbox" value="true" name="service[<%= service[:name] %>][enabled]"/>
+            </label>
+          </td>
+          <td>
+            <%= service[:name] %>
+            <input type="hidden" name="service[<%= service[:name] %>][id]" value="<%=service[:service] %>"/>
+          </td>
+          <td>
+            <%= service[:actions].join(', ') %>
+            <input type="hidden" name="service[<%= service[:name] %>][actions]" value="<%=service[:actions] %>"/>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <p><strong>Select which variable parameters you would like to pass along with their values</strong></p>
+    <table class="table table-condensed" style="background-color: white;">
+      <thead>
+      <tr>
+        <th class="text-center">Enable?</th>
+        <th>Returned Field Name</th>
+        <th>LTI&trade; Variable</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @capabilities[:parameters].each do |cap| %>
+        <tr>
+          <td class="text-center" style="line-height: 2.2;">
+            <label style="display: block;">
+              <input type="checkbox" value="true" name="variable_parameters[<%= cap %>][enabled]"/>
+            </label>
+          </td>
+          <td>
+            <input type="text" class="form-control" value="<%= cap.downcase.gsub('.', '_') %>" name="variable_parameters[<%= cap %>][name]"/>
+          </td>
+          <td style="line-height: 2.2;"><%= cap %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <p><strong>What default Tool Settings do you want?</strong></p>
+    <textarea name="tool_settings">{"default":42}</textarea>
+
+    <div style="padding-top: 15px; margin-top: 15px; border-top: 1px solid #DDDDDD;">
+      <input type="submit" class="btn btn-primary" value="Submit">
+    </div>
+  </form>
+</div>

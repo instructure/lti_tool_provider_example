@@ -1,0 +1,70 @@
+<% if @error.present? %>
+  <div style="background-color: red; text-align: center;">
+    <h4><%= @error %></h4>
+  </div>
+<% end %>
+<table>
+  <thead>
+  <tr>
+    <th>Parameter</th>
+    <th>Type</th>
+    <th>Value</th>
+  </tr>
+  </thead>
+  <% @message.required_params.each do |k, v| %>
+    <tr>
+      <td><b><%= k %>:</b></td>
+      <td>Required</td>
+      <td><%= v %></td>
+    </tr>
+  <% end %>
+  <% @message.recommended_params.each do |k, v| %>
+    <tr>
+      <td><b><%= k %>:</b></td>
+      <td>Recommended</td>
+      <td><%= v %></td>
+    </tr>
+  <% end %>
+  <% @message.optional_params.each do |k, v| %>
+    <tr>
+      <td><b><%= k %>:</b></td>
+      <td>Optional</td>
+      <td><%= v %></td>
+    </tr>
+  <% end %>
+  <% @message.deprecated_params.each do |k, v| %>
+    <tr>
+      <td><b><%= k %>:</b></td>
+      <td>Deprecated</td>
+      <td><%= v %></td>
+    </tr>
+  <% end %>
+  <% @message.custom_params.each do |k, v| %>
+    <tr>
+      <td><b><%= k %>:</b></td>
+      <td>Custom</td>
+      <td><%= v %></td>
+    </tr>
+  <% end %>
+  <% @message.ext_params.each do |k, v| %>
+    <tr>
+      <td><b><%= k %>:</b></td>
+      <td>Extension</td>
+      <td><%= v %></td>
+    </tr>
+  <% end %>
+  <% @message.unknown_params.each do |k, v| %>
+    <tr style="background-color: red;">
+      <td><b><%= k %>:</b></td>
+      <td>Unknown</td>
+      <td><%= v %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p>
+<h4>Oauth Base String</h4>
+<textarea style="width: 100%; min-height: 100px;" readonly> <%= @header.send(:signature_base) %> </textarea>
+<h4>secret</h4>
+<textarea readonly> <%= @secret %> </textarea>
+</p>

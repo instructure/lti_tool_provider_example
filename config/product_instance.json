@@ -1,0 +1,21 @@
+{
+    "guid": "baf196ff-2707-4ea3-9ad7-713db8e6f740",
+    "product_info": {
+        "product_version": "1.0",
+        "product_name": {
+            "default_value": "Tool Provider Example",
+            "key": "tool.name"
+        },
+        "product_family": {
+            "code": "tool-provider-example",
+            "vendor": {
+                "code": "instructure.com",
+                "vendor_name": {
+                    "default_value": "Instructure",
+                    "key": "tool.vendor.name"
+                },
+                "timestamp": "2014-07-22T10:59:55-06:00"
+            }
+        }
+    }
+}

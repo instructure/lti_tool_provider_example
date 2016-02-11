@@ -1,0 +1,28 @@
+code: default
+name:
+  default_value: Lti2Example
+  key: default.name
+
+description:
+  default_value: Lti 2 Example Launch
+  key: default.description
+
+messages:
+  - type: basic-lti-launch-request
+    route:
+      path: "/default"
+      controller: "message"
+      action: "basic_lti_launch_request"
+### List of parameters ###
+#    parameters:
+#      - name: #the name of the parameter
+#        fixed: #a fixed value you want to substitute in
+#      - name: #the name of the parameter
+#        variable: #the variable substitution that you want to get
+#        required: #set to true if you want registration to fail if not the variable is not available
+### List of required capabilities ###
+#    required_capabilities:
+#      - #name of a required capability
+### List of optional capabilities ###
+#    optional_capabilities:
+#      - #name of a optional capability

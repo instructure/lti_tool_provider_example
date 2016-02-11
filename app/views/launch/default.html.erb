@@ -1,0 +1,6 @@
+<h1>Basic Lti Launch</h1>
+<ul style="list-style-type: none;">
+  <% @lti_launch.message.post_params.each do |k,v| %>
+  <li><span style="font-weight: bold;"><%= k %></span> - <%= v %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,16 @@
+{
+  "name": "Lti Tool Provider Example",
+  "description": "A sample LTI tool provider currently supporting LTI2",
+  "keywords": [
+    "lti",
+    "rails"
+  ],
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ],
+  "env": {
+    "LANG": "en_US.UTF-8",
+    "RAILS_ENV": "production",
+    "RACK_ENV": "production"
+  }
+}
