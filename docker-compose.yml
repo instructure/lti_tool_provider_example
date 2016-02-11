@@ -1,0 +1,10 @@
+web:
+  build: .
+  command: "rails s"
+  volumes:
+    - .:/usr/src/app
+  ports:
+    - "3000:3000"
+  environment:
+    VIRTUAL_HOST: lti.docker
+    VIRTUAL_PORT: 3000

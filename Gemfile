@@ -55,3 +55,5 @@ gem 'react-rails', '~> 1.0'
 gem 'simple_oauth', '0.2.0'
 
 gem 'lodash-rails', '~> 3.7.0'
+
+gem 'therubyracer'
