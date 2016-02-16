@@ -1,10 +1,9 @@
-web:
+lti-test-tool:
   build: .
-  command: "rails s"
+  command: bundle exec rails s -p 8080
   volumes:
     - .:/usr/src/app
   ports:
-    - "3000:3000"
+    - "8080:8080"
   environment:
     VIRTUAL_HOST: lti.docker
-    VIRTUAL_PORT: 3000
