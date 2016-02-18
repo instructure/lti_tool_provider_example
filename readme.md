@@ -4,7 +4,6 @@
 
 This is a basic and simple LTI Tool Provider that uses the
 [ims-lti](https://github.com/instructure/ims-lti) 2.0.0.beta gem.
-It currently only supports LTI2 launches
 
 To get this running in your development environment, check out the repo then:
 
