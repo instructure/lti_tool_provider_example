@@ -12,4 +12,6 @@ RUN chown -R docker:docker /usr/src/app
 RUN bundle install
 RUN chown -R docker:docker /usr/local/bundle/gems
 
+RUN bundle exec rake db:setup
+
 USER docker
