@@ -1,17 +1,15 @@
 FROM ruby:2.1.6
 
-RUN mkdir -p /usr/src/app
+ENV APP_HOME /usr/src/app
+RUN mkdir -p $APP_HOME
+WORKDIR $APP_HOME
 
-COPY . /usr/src/app
-
-WORKDIR /usr/src/app
+COPY ./Gemfile $APP_HOME
+RUN bundle install
+COPY . $APP_HOME
+RUN bundle exec rake db:setup
 
 RUN useradd -r -U docker
-RUN chown -R docker:docker /usr/src/app
-
-RUN bundle install
-RUN chown -R docker:docker /usr/local/bundle/gems
-
-RUN bundle exec rake db:setup
+RUN chown -R docker:docker $APP_HOME /usr/local/bundle
 
 USER docker
