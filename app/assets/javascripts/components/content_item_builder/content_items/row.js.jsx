@@ -14,7 +14,8 @@ ContentItemBuilder.ContentItems.Row = React.createClass({
     width: React.PropTypes.string,
     height: React.PropTypes.string,
     presentationTarget: React.PropTypes.string,
-    windowTarget: React.PropTypes.string
+    windowTarget: React.PropTypes.string,
+    confirmUrl: React.PropTypes.string
   },
 
   removeHandler: function () {
@@ -59,6 +60,8 @@ ContentItemBuilder.ContentItems.Row = React.createClass({
             </select>
           </td>
           <td><input ref="itemWindowTarget" id="windowTarget" onChange={this.tableChangeHandler} defaultValue={this.props.itemWindowTarget} type="text"></input></td>
+          <td><input ref="itemConfirmUrl" id="confirmUrl" onChange={this.tableChangeHandler} defaultValue={this.props.confirmUrl}
+          type="text"></input></td>
           <td className="add-remove-col">
             <input type="hidden" ref="index" value={this.props.index}></input>
             <a href="#" onClick={this.removeHandler}>

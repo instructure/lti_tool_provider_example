@@ -1,4 +1,8 @@
 LtiToolProvider::Application.routes.draw do
+
+  post 'callback', to: 'collaboration_callbacks#confirm_url'
+  delete 'callback', to: 'collaboration_callbacks#confirm_url'
+
   root to: 'guide#home'
 
   get 'xml_config', to: 'guide#xml_config', as: :xml_config

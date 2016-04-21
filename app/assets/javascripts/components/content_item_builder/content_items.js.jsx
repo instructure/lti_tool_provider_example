@@ -24,7 +24,8 @@ ContentItemBuilder.ContentItems = React.createClass({
       width: "300",
       height: "300",
       presentationTarget: '',
-      windowTarget: ''
+      windowTarget: '',
+      confirmUrl: ''
     });
     this.setState({contentItems: contentItems});
   },
@@ -112,6 +113,7 @@ ContentItemBuilder.ContentItems = React.createClass({
           <th>Type</th>
           <th>Presentation Target</th>
           <th>Window Target</th>
+          <th>Callback URL</th>
           <th className="add-remove-col">
             <a onClick={this.addRowHandler} href="#">
               <span className="glyphicon glyphicon-plus add-icon"> </span>
@@ -200,6 +202,7 @@ ContentItemBuilder.ContentItems = React.createClass({
         "url": _this.itemTemplate(contentItem).url,
         "title": contentItem.title,
         "text": contentItem.text,
+        "confirmUrl": contentItem.confirmUrl,
         "mediaType": _this.itemTemplate(contentItem).mediaType,
         "windowTarget": contentItem.windowTarget,
         "placementAdvice": {

@@ -37,17 +37,18 @@ end
 # Use unicorn as the app server
 gem 'unicorn'
 
-
 group :development, :test do
   gem 'pry', require: 'pry'
+  gem 'byebug'
+  gem 'rspec-rails', '~> 3.4.2'
 end
 
-gem 'sqlite3', group: [:development, :test]
-gem 'pg', group: :production
+gem 'pg'
 
 gem 'rails_12factor'
 
 gem 'rails_lti2_provider', git: 'https://github.com/rivernate/rails_lti2_provider.git', ref: '9fc97de9b0fd07e021fd9c56c0b2a89120f89af3'
+
 gem 'ims-lti', '2.0.0.beta.39'
 
 gem 'react-rails', '~> 1.0'
