@@ -47,7 +47,7 @@ gem 'pg'
 
 gem 'rails_12factor'
 
-gem 'rails_lti2_provider', git: 'https://github.com/rivernate/rails_lti2_provider.git', ref: '9fc97de9b0fd07e021fd9c56c0b2a89120f89af3'
+gem 'rails_lti2_provider', git: 'https://github.com/rivernate/rails_lti2_provider.git', ref: '842c157'
 
 gem 'ims-lti', '2.0.0.beta.39'
 
