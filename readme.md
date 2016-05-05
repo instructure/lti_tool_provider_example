@@ -8,8 +8,18 @@ This is a basic and simple LTI Tool Provider that uses the
 To get this running in your development environment, check out the repo then:
 
     bundle install
-    bundle exec rake db:setup
+    bundle exec rake db:create
+    bundle exec rake db:migrate
+    bundle exec rake db:seed
     bundle exec rails s
 
+To get this running with Docker, follow these steps:
+
+  $ cp docker-compose/config/* config/
+  $ docker-compose build
+  $ docker-compose run --rm lti-test-tool bundle exec rake db:create
+  $ docker-compose run --rm lti-test-tool bundle exec rake db:migrate
+  $ docker-compose run --rm lti-test-tool bundle exec rake db:seed
+  $ docker-compose up
 
 You can add the tool to a tool consumer with the the '/tool_proxy' endpoint
