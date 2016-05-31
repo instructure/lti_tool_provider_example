@@ -17,6 +17,7 @@ To get this running with Docker, follow these steps:
 
   $ cp docker-compose/config/* config/
   $ docker-compose build
+  $ docker-compose run --rm lti-test-tool bundle install
   $ docker-compose run --rm lti-test-tool bundle exec rake db:create
   $ docker-compose run --rm lti-test-tool bundle exec rake db:migrate
   $ docker-compose run --rm lti-test-tool bundle exec rake db:seed

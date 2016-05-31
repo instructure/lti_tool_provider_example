@@ -15,7 +15,8 @@ ContentItemBuilder.ContentItems.Row = React.createClass({
     height: React.PropTypes.string,
     presentationTarget: React.PropTypes.string,
     windowTarget: React.PropTypes.string,
-    confirmUrl: React.PropTypes.string
+    confirmUrl: React.PropTypes.string,
+    canvasVisibility: React.PropTypes.string
   },
 
   removeHandler: function () {

@@ -25,7 +25,8 @@ ContentItemBuilder.ContentItems = React.createClass({
       height: "300",
       presentationTarget: '',
       windowTarget: '',
-      confirmUrl: ''
+      confirmUrl: '',
+      canvasVisibility: ''
     });
     this.setState({contentItems: contentItems});
   },
@@ -114,6 +115,7 @@ ContentItemBuilder.ContentItems = React.createClass({
           <th>Presentation Target</th>
           <th>Window Target</th>
           <th>Callback URL</th>
+          <th>Canvas Visbility</th>
           <th className="add-remove-col">
             <a onClick={this.addRowHandler} href="#">
               <span className="glyphicon glyphicon-plus add-icon"> </span>
@@ -137,6 +139,7 @@ ContentItemBuilder.ContentItems = React.createClass({
             text={contentItem.text}
             icon={contentItem.icon}
             thumbnail={contentItem.thumbnail}
+            canvasVisibility={contentItem.canvasVisibility}
             type={contentItem.itemType}
             width={contentItem.itemWidth}
             height={contentItem.itemHeight}
@@ -209,6 +212,13 @@ ContentItemBuilder.ContentItems = React.createClass({
           "displayWidth": 800,
           "presentationDocumentTarget": contentItem.presentationTarget,
           "displayHeight": 600
+        },
+        "ext_canvas_visibility": {
+          'users': [
+            "86157096483e6b3a50bfedc6bac902c0b20a824f",
+            "c0ddd6c90cbe1ef0f32fbce5c3bf654204be186c",
+            "535fa085f22b4655f48cd5a36a9215f64c062838"
+          ]
         }
       }
 
@@ -223,6 +233,8 @@ ContentItemBuilder.ContentItems = React.createClass({
       if(!!custom){
         tmpItem.custom = custom
       }
+
+     // could add an if here testing on if is collaboration?
 
 
       if(!!contentItem.thumbnail){
