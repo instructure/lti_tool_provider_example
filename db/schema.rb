@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151204000125) do
+ActiveRecord::Schema.define(version: 20160420155226) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "collaboration_callbacks", force: true do |t|
+    t.string   "request_method"
+    t.string   "host"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "rails_lti2_provider_lti_launches", force: true do |t|
     t.integer  "tool_id",    limit: 8
@@ -32,7 +42,7 @@ ActiveRecord::Schema.define(version: 20151204000125) do
     t.text     "correlation_id"
   end
 
-  add_index "rails_lti2_provider_registrations", ["correlation_id"], name: "index_rails_lti2_provider_registrations_on_correlation_id", unique: true
+  add_index "rails_lti2_provider_registrations", ["correlation_id"], name: "index_rails_lti2_provider_registrations_on_correlation_id", unique: true, using: :btree
 
   create_table "rails_lti2_provider_tools", force: true do |t|
     t.string   "uuid"

@@ -15,7 +15,7 @@ class MessageController < ApplicationController
                                                 else
                                                   'Unknown Error'
                                               end
-    @message = IMS::LTI::Models::Messages::Message.generate(request.request_parameters.merge(request.query_parameters))
+    @message = IMS::LTI::Models::Messages::Message.generate(request.request_parameters)
     @header = SimpleOAuth::Header.new(:post, request.url, @message.post_params, consumer_key: @message.oauth_consumer_key, consumer_secret: 'secret', callback: 'about:blank')
     render :basic_lti_launch_request, status: 200
   end
@@ -37,7 +37,7 @@ class MessageController < ApplicationController
   def process_message
     @secret = "&#{RailsLti2Provider::Tool.find(@lti_launch.tool_id).shared_secret}"
     #TODO: should we create the lti_launch with all of the oauth params as well?
-    @message = (@lti_launch && @lti_launch.message) || IMS::LTI::Models::Messages::Message.generate(request.request_parameters.merge(request.query_parameters))
+    @message = (@lti_launch && @lti_launch.message) || IMS::LTI::Models::Messages::Message.generate(request.request_parameters)
     @header = SimpleOAuth::Header.new(:post, request.url, @message.post_params, consumer_key: @message.oauth_consumer_key, consumer_secret: 'secret', callback: 'about:blank')
   end
 

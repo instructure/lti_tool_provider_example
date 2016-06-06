@@ -7,6 +7,7 @@ lti-test-tool:
     - "8080:8080"
   environment:
     VIRTUAL_HOST: lti.docker
+    DATABASE_URL: postgres://postgres@db:5432
   links:
     - db
 
