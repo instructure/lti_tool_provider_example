@@ -89,6 +89,7 @@ ContentItemBuilder.ContentItems = React.createClass({
     return {
       "title": contentItem.title,
       "text": contentItem.text,
+      "updateUrl": this.props.ltiLaunchUrl,
       "placementAdvice": {
         "displayWidth": 800,
         "presentationDocumentTarget": contentItem.presentationTarget,
@@ -206,6 +207,7 @@ ContentItemBuilder.ContentItems = React.createClass({
         "title": contentItem.title,
         "text": contentItem.text,
         "confirmUrl": contentItem.confirmUrl,
+        "updateUrl": _this.itemTemplate(contentItem).updateUrl,
         "mediaType": _this.itemTemplate(contentItem).mediaType,
         "windowTarget": contentItem.windowTarget,
         "placementAdvice": {

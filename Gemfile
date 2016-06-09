@@ -50,7 +50,7 @@ gem 'rails_12factor'
 gem 'ims-lti', '2.0.0.beta.39'
 gem 'rails_lti2_provider', git: 'https://github.com/rivernate/rails_lti2_provider.git', ref: '42ea6bad1c94a4675329ffc710d8dfa9a02a8321'
 
-gem 'react-rails', '~> 1.0'
+gem 'react-rails', '1.5.0'
 
 gem 'simple_oauth', '0.2.0'
 
