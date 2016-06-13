@@ -61,7 +61,7 @@ GEM
       faraday (>= 0.7.4, < 0.10)
     hike (1.2.3)
     i18n (0.7.0)
-    ims-lti (2.0.0.beta.39)
+    ims-lti (2.0.0.beta.41)
       builder
       faraday (~> 0.8)
       faraday_middleware (~> 0.8)
@@ -185,7 +185,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.0.0)
-  ims-lti (= 2.0.0.beta.39)
+  ims-lti (= 2.0.0.beta.41)
   jbuilder (~> 1.2)
   jquery-rails
   lodash-rails (~> 3.7.0)
