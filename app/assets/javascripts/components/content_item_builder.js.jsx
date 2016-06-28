@@ -5,6 +5,7 @@ var ContentItemBuilder = React.createClass({
     returnUrl: React.PropTypes.string,
     ltiVersion: React.PropTypes.string,
     ltiLaunchUrl: React.PropTypes.string,
+    ltiUpdateUrl: React.PropTypes.string,
     textFileUrl: React.PropTypes.string,
     videoUrl: React.PropTypes.string,
     ccFileUrl: React.PropTypes.string,
@@ -30,6 +31,7 @@ var ContentItemBuilder = React.createClass({
       <div style={{'background': 'white'}} >
         <ContentItemBuilder.ContentItems
           ltiLaunchUrl={this.props.ltiLaunchUrl}
+          ltiUpdateUrl={this.props.ltiUpdateUrl}
           textFileUrl={this.props.textFileUrl}
           videoUrl={this.props.videoUrl}
           ccFileUrl={this.props.ccFileUrl}

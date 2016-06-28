@@ -3,6 +3,7 @@ ContentItemBuilder.ContentItems = React.createClass({
   propTypes: {
     initialContentItems: React.PropTypes.array,
     ltiLaunchUrl: React.PropTypes.string,
+    ltiUpdateUrl: React.PropTypes.string,
     textFileUrl: React.PropTypes.string,
     videoUrl: React.PropTypes.string,
     ccFileUrl: React.PropTypes.string,
@@ -89,7 +90,7 @@ ContentItemBuilder.ContentItems = React.createClass({
     return {
       "title": contentItem.title,
       "text": contentItem.text,
-      "updateUrl": this.props.ltiLaunchUrl,
+      "updateUrl": this.props.ltiUpdateUrl,
       "placementAdvice": {
         "displayWidth": 800,
         "presentationDocumentTarget": contentItem.presentationTarget,
