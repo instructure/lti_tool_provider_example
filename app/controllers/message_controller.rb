@@ -2,7 +2,7 @@ class MessageController < ApplicationController
   include RailsLti2Provider::ControllerHelpers
 
   skip_before_action :verify_authenticity_token
-  before_filter :lti_authentication, except: :youtube
+  before_filter :lti_authentication, except: [:youtube, :signed_content_item_request]
 
   rescue_from RailsLti2Provider::LtiLaunch::Unauthorized do |ex|
     @error = 'Authentication failed with: ' + case ex.error
@@ -26,6 +26,16 @@ class MessageController < ApplicationController
 
   def content_item_selection
     process_message
+  end
+
+  def signed_content_item_request
+    key = 'key' # this should ideally be sent up via api call
+    launch_url = params.delete('return_url')
+    tool = RailsLti2Provider::Tool.where(uuid: 'key').last
+    message = IMS::LTI::Models::Messages::Message.generate(request.request_parameters.merge(oauth_consumer_key: key))
+    message.launch_url = launch_url
+    @launch_params = { launch_url: message.launch_url, signed_params: message.signed_post_params(tool.shared_secret) }
+    render 'message/signed_content_item_form'
   end
 
   def youtube

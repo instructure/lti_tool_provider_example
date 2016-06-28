@@ -1,0 +1,6 @@
+<%= form_tag @launch_params[:launch_url], authenticity_token: false do %>
+  <% @launch_params[:signed_params].each do |k, v| %>
+      <%= text_field_tag k, v, readonly: true %>
+  <% end %>
+    <%= submit_tag "Submit", class: "submit-btn" %>
+<% end %>

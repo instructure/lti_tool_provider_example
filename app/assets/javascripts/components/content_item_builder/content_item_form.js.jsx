@@ -32,7 +32,7 @@ ContentItemBuilder.ContentItemForm = React.createClass({
     var contentItems = this.props.contentItems.contentItems || this.props.contentItems;
 
     return (
-      <form ref="contentItemForm" action={this.props.returnUrl} method="post" id="contentItemForm">
+      <form ref="contentItemForm" action="signed_content_item_request" method="post" id="contentItemForm">
         <input type="hidden" name="lti_message_type" value="ContentItemSelection"/>
         <input type="hidden" name="lti_version" value={this.props.ltiVersion}/>
         <input type="hidden" name="data" value={this.props.data}/>
@@ -41,6 +41,7 @@ ContentItemBuilder.ContentItemForm = React.createClass({
         <input type="hidden" name="lti_log" value={this.props.ltiLog}/>
         <input type="hidden" name="lti_errormsg" value={this.props.ltiErrorMsg}/>
         <input type="hidden" name="lti_errorlog" value={this.props.ltiErrorLog}/>
+        <input type="hidden" name="return_url" value={this.props.returnUrl}/>
       </form>
     );
   },
