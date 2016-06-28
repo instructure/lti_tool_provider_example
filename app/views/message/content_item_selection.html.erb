@@ -1,8 +1,7 @@
 <h1 style="text-align: center">Content Item Selection</h1>
 <h4>ContentItemResponse</h4>
 
-<% if @message.accept_unsigned == 'true' %>
-
+<% if @message %>
 <%= react_component('ContentItemBuilder',
                     data:@message.data,
                     returnUrl:@message.content_item_return_url,
@@ -14,9 +13,6 @@
                     documentTargets:@message.accept_presentation_document_targets.split(','),
                     mediaTypes:@message.accept_media_types.split(',')
     ) %>
-    <% else %>
-    <h2>This tool doesn't support signed content item messages! </h2>
-    <p>The message parameter 'accept_unsigned' must be sent with a value of 'true'</p>
 <% end %>
 <h4>LTI Message</h4>
 <%= render "message_info" %>
