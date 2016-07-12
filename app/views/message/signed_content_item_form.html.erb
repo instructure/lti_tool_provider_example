@@ -1,6 +1,6 @@
-<%= form_tag @launch_params[:launch_url], authenticity_token: false do %>
+<form id="lti_form" action="<%=@launch_params[:launch_url]%>" method="post">
   <% @launch_params[:signed_params].each do |k, v| %>
-      <%= text_field_tag k, v, readonly: true %>
+      <input name="<%=k%>" value="<%=v%>" type="hidden" />
   <% end %>
-    <%= submit_tag "Submit", class: "submit-btn" %>
-<% end %>
+</form>
+<script>document.getElementById('lti_form').submit();</script>
