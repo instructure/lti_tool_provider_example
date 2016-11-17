@@ -1,15 +1,17 @@
-test:
-  adapter: postgresql
-  database: lti_tool_provider_example_test
-
-development:
+development: &default
   adapter: postgresql
   encoding: utf8
   database: lti_tool_provider_example_development
+  pool: 5
+  username: postgres
+  host: postgres
+
+test:
+  <<: *default
+  database: lti_tool_provider_example_test
 
 production:
-  adapter: postgresql
-  encoding: utf8
+  <<: *default
   database: lti_tool_provider_example_production
   timeout: 5000
   connect_timeout: 10
