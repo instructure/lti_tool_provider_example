@@ -5,6 +5,7 @@ module CanvasExtensions
     {key: :assignment_menu, name: 'Assignment Menu', message: [:content_item_selection, :basic_lti_request]},
     {key: :assignment_configuration, name: 'Assignment Configuration', message: [:basic_lti_request]},
     {key: :collaboration, name: 'Collaboration', message: [:content_item_selection_request, :basic_lti_request]},
+    {key: :course_assignments_menu, name: 'Course Assignments Menu', message: [:basic_lti_request]},
     {key: :course_home_sub_navigation, name: 'Course Home Sub Navigation'},
     {key: :course_navigation, name: 'Course Navigation'},
     {key: :course_settings_sub_navigation, name: 'Course Settings Sub Navigation'},
