@@ -1,9 +1,9 @@
 version: '2'
 services:
-  lti-test-tool:
+  app:
     build: .
     ports:
-      - "8080:8080"
+      - "8080"
     environment:
       VIRTUAL_HOST: lti.docker
     links:
