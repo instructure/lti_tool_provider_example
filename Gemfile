@@ -43,7 +43,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.4.2'
 end
 
-gem 'pg'
+gem 'pg', '~> 0.11'
 
 gem 'rails_12factor'
 

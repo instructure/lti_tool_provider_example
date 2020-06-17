@@ -20,6 +20,7 @@ module CanvasExtensions
     {key: :post_grades, name: 'Post Grades'},
     {key: :quiz_menu, name: 'Quiz Menu', message: [:content_item_selection, :basic_lti_request]},
     {key: :similarity_detection, name: 'Similarity Detection', message: [:basic_lti_request]},
+    {key: :submission_type_selection, name: 'Submission Type Selection', message: [:content_item_selection_request, :basic_lti_request]},
     {key: :tool_configuration, name: 'Tool Configuration'},
     {key: :user_navigation, name: 'User Navigation'},
     {key: :wiki_page_menu, name: 'Wiki Page Menu', message: [:content_item_selection, :basic_lti_request]},

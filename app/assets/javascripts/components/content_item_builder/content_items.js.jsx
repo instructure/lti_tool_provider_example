@@ -222,6 +222,13 @@ ContentItemBuilder.ContentItems = React.createClass({
             "c0ddd6c90cbe1ef0f32fbce5c3bf654204be186c",
             "535fa085f22b4655f48cd5a36a9215f64c062838"
           ]
+        },
+        "https://canvas.instructure.com/lti/mastery_connect_assessment": {
+          "points": 20,
+          "objectives": "6.R.P.A.1",
+          "trackerName": "Tracker01",
+          "trackerAlignment": "9th grade Science",
+          "studentCount": 20
         }
       }
 
