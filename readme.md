@@ -15,12 +15,13 @@ To get this running in your development environment, check out the repo then:
 
 To get this running with Docker, follow these steps:
 
-  $ cp docker-compose/config/* config/
-  $ docker-compose build
-  $ docker-compose run --rm lti-test-tool bundle install
-  $ docker-compose run --rm lti-test-tool bundle exec rake db:create
-  $ docker-compose run --rm lti-test-tool bundle exec rake db:migrate
-  $ docker-compose run --rm lti-test-tool bundle exec rake db:seed
-  $ docker-compose up
+    docker-compose build
+    docker-compose run --rm app bundle install
+    docker-compose run --rm app bundle exec rake db:create
+    docker-compose run --rm app bundle exec rake db:migrate
+    docker-compose run --rm app bundle exec rake db:seed
+    docker-compose up
 
-You can add the tool to a tool consumer with the the '/tool_proxy' endpoint
+You can add the tool to a tool consumer with the the `/tool_proxy` endpoint
+
+When installing the LTI 1 tool use the key and secret `key` and `secret` or you will get a `NoMethodError: shared_secret` error.

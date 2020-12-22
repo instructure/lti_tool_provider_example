@@ -18,9 +18,8 @@ COPY ./entrypoint.sh $APP_HOME
 COPY . $APP_HOME
 
 RUN useradd -r -U docker
-RUN chmod +x $APP_HOME/entrypoint.sh && \
-    chown -R docker:docker $APP_HOME /usr/local/bundle
+RUN chown -R docker:docker $APP_HOME /usr/local/bundle
 
 USER docker
 
-CMD ["/usr/src/app/entrypoint.sh"]
+CMD ["bash", "/usr/src/app/entrypoint.sh"]

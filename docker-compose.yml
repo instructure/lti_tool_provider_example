@@ -1,6 +1,10 @@
 version: '2'
+volumes:
+  tmp:
+  log:
 services:
   app:
+    labels: ["traefik.frontend.entryPoints=http,https"]
     build: .
     ports:
       - "8080"
@@ -8,5 +12,11 @@ services:
       VIRTUAL_HOST: lti.docker
     links:
       - postgres
+    volumes:
+      - .:/usr/src/app
+      - tmp:/usr/src/app/tmp
+      - log:/usr/src/app/log
   postgres:
-    image: postgres
+    image: postgres:9
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
