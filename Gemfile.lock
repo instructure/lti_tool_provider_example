@@ -167,7 +167,7 @@ GEM
     tilt (1.4.1)
     turbolinks (2.5.4)
       coffee-rails
-    tzinfo (1.2.7)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
